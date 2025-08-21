@@ -15,10 +15,8 @@ let totalExpense = 0;
 // Making transaction cards based on input
 function makeCards(desc, amount) {
   const childCards = `
-            <li class="">
               <span>${desc}</span>
               <span>$${amount}</span>
-            </li>
   `;
   const li = document.createElement("li");
   li.classList.add("trans-child");
