@@ -157,6 +157,12 @@ ul {
   border-right: 5px solid var(--primay-color);
 }
 
+.trans-child span:first-child {
+  max-width: 300px;
+  width: 75%;
+  word-wrap: break-word;
+}
+
 .trans-child:not(:last-child) {
   margin-bottom: 16px;
 }
