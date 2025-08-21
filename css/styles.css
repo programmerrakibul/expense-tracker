@@ -1,0 +1,210 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* Global Styles */
+:root {
+  --primay-color: #38aa6a;
+  --secondary-color: #9fccab;
+  --accent-color: #799f4a;
+  --white-color: #faf7f3;
+  --text-dark: #1d202c;
+  --text-danger: #d32a25;
+
+  --font-open-sans: "Open Sans", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-open-sans);
+}
+
+body {
+  width: 100%;
+  min-height: 100dvh;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-dark);
+  background: linear-gradient(
+    to bottom right,
+    var(--primay-color),
+    var(--secondary-color)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* Container Styles */
+.container {
+  max-width: 960px;
+  width: 90%;
+  padding: 25px;
+  border-radius: 1rem;
+  background-color: var(--white-color);
+}
+
+/* Title */
+.title {
+  text-align: center;
+  margin-bottom: 26px;
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+/* Balance Details */
+.balance-details {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 18px;
+  border-radius: 0.7rem;
+  background: linear-gradient(
+    to left top,
+    var(--accent-color),
+    var(--secondary-color)
+  );
+}
+
+.balance-details > h4 {
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.balance-details > h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+/* Balance Filed */
+.balance-field {
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.balance-field h5 {
+  font-size: 0.957rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.balance-field h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.income-amount,
+.expense-amount {
+  flex-basis: 50%;
+  padding: 16px;
+  border-radius: 0.6rem;
+  background-color: var(--white-color);
+}
+
+.income-amount {
+  color: var(--primay-color);
+}
+
+.expense-amount {
+  color: var(--text-danger);
+}
+
+/* Transaction Container */
+.transaction-container {
+  display: flex;
+  gap: 22px;
+  height: 430px;
+}
+
+.transaction-details,
+.transaction-form {
+  flex-basis: 50%;
+}
+
+.transaction-details h3,
+.transaction-form form h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Transaction Details */
+.transaction-lists {
+  padding: 6px 0px;
+  height: calc(100% - 43px);
+  overflow-y: auto;
+}
+
+.trans-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 26px;
+  box-shadow: 0px 4px 7px 0px #ddd;
+  border-radius: 0.6rem;
+  font-weight: 500;
+  border-right: 5px solid var(--primay-color);
+}
+
+.trans-child:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+/* Transaction Form */
+.transaction-form form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.transaction-form form > label {
+  font-size: 0.972rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.transaction-form form > input,
+#transaction-btn {
+  padding: 11px 14px;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.transaction-form form > input {
+  border: 1px solid #ddd;
+}
+.transaction-form form > input:focus {
+  border-color: var(--primay-color);
+  outline: none;
+}
+
+.transaction-form form > span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.6;
+}
+
+.transaction-form form > button {
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: auto;
+  transition: background-color 0.3s ease;
+  color: var(--white-color);
+  background-color: var(--primay-color);
+}
+.transaction-form form > button:hover {
+  background-color: #38aa69e4;
+}

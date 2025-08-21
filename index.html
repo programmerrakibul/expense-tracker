@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <!-- Custom css -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Expense Tracker</h1>
+
+      <!-- Balance Field -->
+      <div class="balance-details">
+        <h4>Your Balance</h4>
+        <h1>$<span id="total-balance">2,450.00</span></h1>
+
+        <!-- Expenses -->
+        <div class="balance-field">
+          <!-- Income Amount -->
+          <div class="income-amount">
+            <h5>Income</h5>
+            <h2>$<span id="total-income">4,700.00</span></h2>
+          </div>
+
+          <!-- Expense Amount -->
+          <div class="expense-amount">
+            <h5>Expenses</h5>
+            <h2>$<span id="total-expense">2,250.00</span></h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transaction Field -->
+      <div class="transaction-container">
+        <!-- Transaction Details -->
+        <div class="transaction-details">
+          <h3>Transactions</h3>
+          <ul class="transaction-lists">
+            <li class="trans-child">
+              <span>Paycheck 3</span>
+              <span>$1,00</span>
+            </li>
+            <li class="trans-child">
+              <span>Paycheck 3</span>
+              <span>$1,00</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Transaction Input Form -->
+        <div class="transaction-form">
+          <form action="">
+            <h3>Add Transaction</h3>
+            <label for="desc">Description</label>
+            <input
+              id="desc"
+              name="desc"
+              type="text"
+              placeholder="Enter description.."
+            />
+            <label for="amount">Amount</label>
+            <input
+              id="amount"
+              name="amount"
+              type="number"
+              step="any"
+              placeholder="Enter amount.."
+            />
+            <span>Use Negative (-) for Expenses</span>
+
+            <!-- Transaction Button -->
+            <button type="submit" id="transaction-btn">Add Transaction</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Script -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>
