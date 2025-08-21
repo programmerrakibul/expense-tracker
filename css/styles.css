@@ -7,8 +7,8 @@
   --secondary-color: #9fccab;
   --accent-color: #799f4a;
   --white-color: #faf7f3;
-  --text-dark: #1d202c;
-  --text-danger: #d32a25;
+  --dark-color: #1d202c;
+  --danger-color: #d32a25;
 
   --font-open-sans: "Open Sans", sans-serif;
 }
@@ -27,7 +27,7 @@ body {
   min-height: 100dvh;
   font-size: 1rem;
   font-weight: 400;
-  color: var(--text-dark);
+  color: var(--dark-color);
   background: linear-gradient(
     to bottom right,
     var(--primay-color),
@@ -117,7 +117,7 @@ ul {
 }
 
 .expense-amount {
-  color: var(--text-danger);
+  color: var(--danger-color);
 }
 
 /* Transaction Container */
@@ -154,7 +154,14 @@ ul {
   box-shadow: 0px 4px 7px 0px #ddd;
   border-radius: 0.6rem;
   font-weight: 500;
-  border-right: 5px solid var(--primay-color);
+  border-right: 5px solid transparent;
+}
+
+.border-green {
+  border-right-color: var(--primay-color);
+}
+.border-red {
+  border-right-color: var(--danger-color);
 }
 
 .trans-child span:first-child {
