@@ -25,9 +25,12 @@ function makeCards(desc, amount) {
 
 function borderColor(tag) {
   tag.style.borderColor = "#d32a25";
-  setTimeout(() => {
+  tag.addEventListener("mousedown", () => {
+    tag.style.borderColor = "#38aa6a";
+  });
+  tag.addEventListener("mouseleave", () => {
     tag.style.borderColor = "#ddd";
-  }, 5000);
+  });
 }
 
 // Function for listener
