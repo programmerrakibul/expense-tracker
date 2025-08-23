@@ -1,5 +1,4 @@
 // DOM Selectors
-const form = document.querySelector(".transaction-form");
 const button = document.getElementById("transaction-btn");
 const descEl = document.getElementById("desc");
 const amountEl = document.getElementById("amount");
@@ -20,31 +19,42 @@ function makeCards(desc, amount) {
   `;
   const li = document.createElement("li");
   li.classList.add("trans-child");
-
-  if (amount < 0) {
-    li.classList.add("border-red");
-  } else {
-    li.classList.add("border-green");
-  }
-
   li.innerHTML = childCards;
+  return li;
+}
 
-  cardsContainer.appendChild(li);
+function borderColor(tag) {
+  tag.style.borderColor = "#d32a25";
+  setTimeout(() => {
+    tag.style.borderColor = "#ddd";
+  }, 5000);
 }
 
 // Function for listener
-function addTransaction() {
+function addTransaction(e) {
+  e.preventDefault();
+
   const descVal = descEl.value;
   const amountVal = Number.parseFloat(amountEl.value);
 
-  // Card function invoking
-  makeCards(descVal, amountVal);
+  if (descVal === "") {
+    borderColor(descEl);
+    return;
+  } else if (amountEl.value === "" || amountVal === 0) {
+    borderColor(amountEl);
+    return;
+  }
+
+  const li = makeCards(descVal, amountVal);
+  cardsContainer.appendChild(li);
 
   if (amountVal < 0) {
     // Computing expenses
+    li.classList.add("border-red");
     totalExpense += Math.abs(amountVal);
   } else {
     // Computing incomes
+    li.classList.add("border-green");
     totalIncome += amountVal;
   }
 
@@ -66,8 +76,3 @@ function addTransaction() {
 
 // Button listener
 button.addEventListener("click", addTransaction);
-
-// Preventing from reload
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
