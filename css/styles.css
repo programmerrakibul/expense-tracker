@@ -146,6 +146,25 @@ ul {
   overflow-y: auto;
 }
 
+/* Custom scrollbar only for .transaction-lists */
+.transaction-lists::-webkit-scrollbar {
+  width: 10px;
+}
+
+.transaction-lists::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+.transaction-lists::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  border: 2px solid #eee;
+}
+
+.transaction-lists::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
 .trans-child {
   display: flex;
   justify-content: space-between;
